@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(77, 71, 71);
+}
+.accordion {
+  width: 50%;
+  margin: 200px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.item {
+  box-shadow: 0 0 30px 0px rgb(0 0 0 / 0.2);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 30px;
+  align-items: center;
+  padding: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.number {
+  font-size: 32px;
+}
+.hiddenclass {
+  grid-column: 2/3;
+  display: none;
+}
+.active .hiddenclass {
+  display: block;
+}
+.active {
+  position: relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  border-top: 3px solid blue;
+  animation: borderline 1s linear forwards;
+}
+@keyframes borderline {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
